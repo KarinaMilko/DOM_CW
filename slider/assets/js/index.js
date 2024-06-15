@@ -55,7 +55,7 @@ const slides = [
 let currentSlideIndex = 0;
 
 //встановити як початкове нульове зображення
-const sliderImg = document.querySelector(".sliderImg");
+// const sliderImg = document.querySelector(".sliderImg");
 
 updateSlider(currentSlideIndex);
 
@@ -79,3 +79,53 @@ function updateSlider(currentIndex) {
   sliderImg.src = slides[currentIndex].src;
   sliderImg.alt = slides[currentIndex].alt;
 }
+
+// MVVM -- Model - View - ViewModel (MVC, MVP)
+// ViewModel
+const sliderImg = document.querySelector(".sliderImg");
+
+const [prevBtn, nextBtn] = document.querySelectorAll("button");
+
+function updateSlider(currentIndex) {
+  sliderImg.src = slides[currentIndex].src;
+  sliderImg.alt = slides[currentIndex].alt;
+}
+
+// try {
+//   const slider = new Slider(slides, 1);
+//   prevBtn.onclick = () => {
+//     slider.decIndex();
+//     updateSlider(slider.currentIndex);
+//   };
+//   nextBtn.onclick = () => {
+//     slider.incIndex();
+//     updateSlider(slider.currentIndex);
+//   };
+// } catch (err) {
+//   sliderImg.src =
+//     "https://cdn.vectorstock.com/i/500p/65/30/default-image-icon-missing-picture-page-vector-40546530.jpg";
+//   sliderImg.alt = "unavailable image";
+// }
+
+function sliderError() {
+  sliderImg.src =
+    "https://cdn.vectorstock.com/i/500p/65/30/default-image-icon-missing-picture-page-vector-40546530.jpg";
+  sliderImg.alt = "unavailable image";
+}
+
+sliderImg.onerror = () => {
+  sliderError();
+};
+
+try {
+  const slider = new Slider(slides, 0);
+  updateSlider(slider.currentIndex);
+
+  prevBtn.onclick = () => {
+    updateSlider(slider.currentIndex);
+  };
+} catch (err) {
+  sliderError();
+}
+
+console.log("after error");
