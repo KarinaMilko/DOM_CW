@@ -1,0 +1,38 @@
+.sliderWrapper {
+  width: 400px;
+  height: 200px;
+  margin: 100px auto 0;
+  position: relative;
+}
+
+.sliderImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.prevBtn,
+.nextBtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #fff7;
+  border: none;
+  transition: 0.1s linear background-color;
+}
+
+.prevBtn:hover,
+.nextBtn:hover {
+  background-color: #fffa;
+}
+
+.prevBtn {
+  left: 10px;
+}
+
+.nextBtn {
+  right: 10px;
+}
