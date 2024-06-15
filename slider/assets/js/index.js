@@ -121,9 +121,31 @@ try {
   const slider = new Slider(slides, 0);
   updateSlider(slider.currentIndex);
 
-  prevBtn.onclick = () => {
-    updateSlider(slider.currentIndex);
-  };
+  //   prevBtn.onclick = () => {
+  //     slider.decIndex();
+  //     updateSlider(slider.currentIndex);
+  //   };
+  //   nextBtn.onclick = () => {
+  //     slider.incIndex();
+  //     updateSlider(slider.currentIndex);
+  //   };
+
+  // 'prev', 'next'
+  function changeSlideHandler(direction = "next") {
+    return () => {
+      slider[direction === "prev" ? "decIndex" : "incIndex"]();
+      updateSlider(slider.currentIndex);
+    };
+  }
+
+  prevBtn.onclick = changeSlideHandler("prev");
+  nextBtn.onclick = changeSlideHandler("next");
+
+  //   prevBtn.onclick = () => {
+  //     const direction = "prev";
+  //     slider[direction === "prev" ? "decIndex" : "incIndex"]();
+  //     updateSlider(slider.currentIndex);
+  //   };
 } catch (err) {
   sliderError();
 }
