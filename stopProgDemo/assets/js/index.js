@@ -4,14 +4,15 @@ const heartBtn = document.querySelector("button");
 
 heartBtn.addEventListener("click", heartClickHandler);
 
-function heartClickHandler() {
+function heartClickHandler(e) {
   this.classList.toggle("redHeart");
+  e.stopPropagation();
 }
+// реалізувати обробник на статті, щоб вона при кліку міняла колір
 
-const artColor = document.querySelector(".art");
+const articleEl = document.querySelector("article");
 
-artColor.addEventListener("click", artClickHandler);
-
-function artClickHandler() {
-  this.classList.toggle("yellowText");
+articleEl.addEventListener("click", backgroundChangeHendler);
+function backgroundChangeHendler() {
+  this.classList.toggle("background");
 }
