@@ -16,3 +16,8 @@
 .doneTask {
   text-decoration: line-through;
 }
+
+div {
+  padding: 20px;
+  border: 1px solid red;
+}
