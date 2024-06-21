@@ -1,4 +1,4 @@
-.h1 {
+/* .h1 {
   border: 1px solid black;
 }
 .task {
@@ -20,4 +20,16 @@
 div {
   padding: 20px;
   border: 1px solid red;
+} */
+body {
+  padding: 10px;
+}
+article {
+  margin: 100px auto 0;
+  padding: 40px;
+  font-size: 36px;
+  text-align: center;
+  font-family: sans-serif;
+  border-radius: 25px;
+  box-shadow: 0 0 5px purple;
 }
