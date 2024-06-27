@@ -21,7 +21,7 @@ div {
   padding: 20px;
   border: 1px solid red;
 } */
-body {
+/* body {
   padding: 10px;
 }
 article {
@@ -32,4 +32,37 @@ article {
   font-family: sans-serif;
   border-radius: 25px;
   box-shadow: 0 0 5px purple;
+} */
+
+:root {
+  font-family: sans-serif;
+  --user-img-size: 100px;
+}
+
+.userCard {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  box-shadow: grey 0 0 5px;
+  margin: 10px;
+  padding: 15px;
+  border-radius: 15px;
+}
+
+.userImg {
+  width: var(--user-img-size);
+  height: var(--user-img-size);
+  border-radius: 50%;
+  border: 2px solid violet;
+}
+
+.userName {
+}
+
+.userAge {
+  color: grey;
+}
+
+.trashIcon {
+  margin-left: auto;
 }
